@@ -4,7 +4,6 @@ from django.contrib.auth import get_user_model
 from django.db import models
 
 User = get_user_model()
-# Create your models here.
 
 
 class Product(models.Model):
@@ -12,7 +11,7 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     preview = models.ImageField(upload_to='previews/', null=True, blank=True, default='previews/default_preview.jpg')
-    vendor = models.ForeignKey(User, related_name='products', on_delete=models.RESTRICT)
+    owner = models.ForeignKey(User, related_name='products', on_delete=models.RESTRICT)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

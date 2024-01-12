@@ -25,9 +25,9 @@ from .drf_swagger import urlpatterns as doc_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/account/', include('account.urls')),
+    path('api/v1/product/', include('product.urls')),
     # path('api/v1/cart/', include('cart.urls')),
     # path('api/v1/feedback/', include('feedback.urls')),
-    # path('api/v1/products/', include('product.urls')),
 ]
 
 urlpatterns += doc_urls  # swagger docs urls

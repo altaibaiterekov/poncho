@@ -9,4 +9,4 @@ class CustomUser(AbstractUser):
     avatar = models.ImageField(upload_to='avatars', blank=True, default='avatars/default_avatar.jpg')
 
     def __str__(self):
-        return f'{self.email}'
+        return f'{self.nickname}[{self.email}]'
